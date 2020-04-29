@@ -1,0 +1,18 @@
+<div class="form-search text-center">
+    <h2>Search For : {{title}}</h2>
+    <input name="ip" type="text" [(ngModel)]="keyWordSearch">
+
+    <button class="btn btn-primary text-center" type="button" id="button-addon2"
+            (click)="onSearch(keyWordSearch)">Search
+    </button>
+    <br>
+
+    <button class="btn btn-success" routerLink="/users/create">
+        Create new
+    </button>
+
+
+</div>
+
+
+

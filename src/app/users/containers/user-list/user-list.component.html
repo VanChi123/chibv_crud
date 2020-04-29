@@ -1,0 +1,25 @@
+<fis-search-form [title]="title" (search)="onSeach($event)"></fis-search-form>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let user of (listUser$ | async)">
+        <th scope="row">
+            {{user.id}}
+        </th>
+        <td>
+            <a [routerLink]="['/users', user.id]">
+                {{user.name}}
+            </a>
+        </td>
+        <td>{{user.price}}</td>
+        <td>{{user.quantity}}</td>
+    </tr>
+    </tbody>
+</table>

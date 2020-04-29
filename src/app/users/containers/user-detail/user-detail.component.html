@@ -1,23 +1,32 @@
-<form class="product-form" [formGroup]="userForm" (ngSubmit)="onSave(userForm)">
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" class="form-control" formControlName="name">
+<div class="container">
+    <div class="row justify-content-center" id="form-tao-moi">
+        <div class="col-4 text-center">
+            <form class="product-form" [formGroup]="userForm" (ngSubmit)="onSave(userForm)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div *ngIf="name.invalid"><p class="text-danger">!!! Name is not empty</p></div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" formControlName="price">
+                </div>
+                <div *ngIf="price.invalid" ><p class="text-danger">!!! Price is not empty</p></div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" class="form-control" formControlName="quantity">
+                </div>
+                <div *ngIf="quantityControlInvalid">
+                    <p class="text-danger">!!! Quantity is not empty</p>
+                </div>
+                <div *ngIf="quantityControlInvalid1">
+                    <p class="text-danger">!!! Quantity is not negative</p>
+                </div>
+                <button *ngIf="!checkExist" type="submit" class="btn btn-success">Create new</button>
+                <button *ngIf="checkExist" type="submit" class="btn btn-primary">Update</button>
+            </form>
+            <h2>{{errors$}}</h2>
+        </div>
     </div>
-    <div *ngIf="name.invalid" class="text-danger">!!! Name is not empty</div>
-    <div class="form-group">
-        <label>Price</label>
-        <input type="number" class="form-control" formControlName="price">
-    </div>
-    <div *ngIf="price.invalid" class="text-danger">!!! Price is not empty</div>
-    <div class="form-group">
-        <label>Quantity</label>
-        <input type="number" class="form-control" formControlName="quantity">
-    </div>
-    <div *ngIf="quantity.invalid" class="text-danger">!!! Quantity is not empty</div>
-    <div *ngIf="quantity.errors.min" class="text-danger">!!! Quantity is not smaller than 1</div>
+</div>
 
-
-    <button *ngIf="!checkExist" type="submit" class="btn btn-success">Create new</button>
-    <button *ngIf="checkExist" type="submit" class="btn btn-primary">Update</button>
-</form>
-<h2>{{errors$}}</h2>

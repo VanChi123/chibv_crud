@@ -29,11 +29,12 @@ export class UserDetailComponent implements OnInit {
   get quantity(): any{
     return this.userForm.get('quantity');
   }
-  get nameControlInvalid() {
-    return this.name.hasError('required') && this.name.touched;
+  get quantityControlInvalid() {
+    return this.quantity.hasError('required') ;
+        // && this.name.touched;
   }
-  get nameControlInvalid1() {
-    return this.name.hasError('required') && this.name.touched;
+  get quantityControlInvalid1() {
+    return this.quantity.hasError('min') ;
   }
   userForm = new FormGroup({
     id: new FormControl(Math.floor(Math.random() * (100 - 1 + 1)) + 100),

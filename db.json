@@ -46,9 +46,9 @@
   "users": [
     {
       "id": 1,
-      "name": "Iphone 4 test editz",
-      "price": 303,
-      "quantity": 11
+      "name": "Iphone 4 test editzx",
+      "price": 304,
+      "quantity": 5
     },
     {
       "id": 2,
@@ -71,80 +71,8 @@
     {
       "id": 196,
       "name": "tes",
-      "price": 200,
+      "price": 201,
       "quantity": 1
-    },
-    {
-      "id": 162,
-      "name": "test -as-dasdsa",
-      "price": 1,
-      "quantity": 1
-    },
-    {
-      "id": 139,
-      "name": "fđfd",
-      "price": 1,
-      "quantity": 5
-    },
-    {
-      "id": 105,
-      "name": "fds",
-      "price": 2,
-      "quantity": 2
-    },
-    {
-      "id": 149,
-      "name": "fdfd",
-      "price": -2,
-      "quantity": -2
-    },
-    {
-      "id": 170,
-      "name": "chi",
-      "price": 2,
-      "quantity": 2
-    },
-    {
-      "id": 100,
-      "name": "hhh",
-      "price": 67,
-      "quantity": 7
-    },
-    {
-      "id": 198,
-      "name": "vvvv",
-      "price": 2,
-      "quantity": 2
-    },
-    {
-      "id": 181,
-      "name": "ff",
-      "price": 2,
-      "quantity": 1
-    },
-    {
-      "id": 112,
-      "name": "yy",
-      "price": 1,
-      "quantity": 1
-    },
-    {
-      "id": 103,
-      "name": "ffx",
-      "price": 1,
-      "quantity": 1
-    },
-    {
-      "id": 107,
-      "name": "r",
-      "price": 4,
-      "quantity": 4
-    },
-    {
-      "id": 123,
-      "name": "a",
-      "price": 2,
-      "quantity": 2
     }
   ]
 }

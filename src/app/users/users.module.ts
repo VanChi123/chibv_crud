@@ -12,6 +12,8 @@ import {EffectsModule} from '@ngrx/effects';
 import {UsersEffects, usersReducer} from './store';
 import {HttpClientModule} from "@angular/common/http";
 import {UserService} from "./services/user.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
     declarations: [
@@ -28,6 +30,8 @@ HttpClientModule,
 
         StoreModule.forFeature('users', usersReducer),
         EffectsModule.forFeature([UsersEffects]),
+
+
     ],
     providers: [
         UserService

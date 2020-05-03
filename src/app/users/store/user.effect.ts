@@ -2,17 +2,19 @@ import {Injectable} from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import * as userActions from './user.action';
-import {catchError, exhaustMap, map, tap} from 'rxjs/operators';
+import {catchError, exhaustMap, map, tap, timeInterval, timeout} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {Router} from '@angular/router';
 import {UserService} from '../services/user.service';
+import {ToastrService} from "ngx-toastr";
 
 @Injectable()
 export class UsersEffects {
   constructor(
     private actions$: Actions,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) {
   }
 
@@ -74,18 +76,20 @@ export class UsersEffects {
       this.actions$.pipe(
         ofType(userActions.createUsersuccess),
         tap((response) => {
-          this.router.navigate(['/users']);
+            this.toastr.success('Tạo Thành Công');
+            this.router.navigate(['/users']);
         })
       ),
     { dispatch: false }
   );
-  //
+
   updateProductS$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(userActions.updateUsersuccess),
         tap((response) => {
-          this.router.navigate(['/users']);
+            this.toastr.success('Cập Nhật Thành Công');
+            this.router.navigate(['/users']);
         })
       ),
     { dispatch: false }

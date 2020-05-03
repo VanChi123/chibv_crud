@@ -35,6 +35,8 @@ export class ProductsListComponent implements OnInit, OnChanges {
 
 
   onSearch(keyword: any) {
+    console.log('key: ', keyword);
+
     // if(keyword && keyword.length > 0) {
     //   this.productsList$ = this.productService.searchProduct(keyword);
     // } else {

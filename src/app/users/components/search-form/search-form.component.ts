@@ -19,8 +19,6 @@ export class SearchFormComponent implements OnInit {
   onSearch(keyword: any){
     console.log('keyword', keyword);
     this.search.emit(keyword);
-
-
   }
 
 }

@@ -22,9 +22,11 @@
                 <div *ngIf="quantityControlInvalid1">
                     <p class="text-danger">!!! Quantity is not negative</p>
                 </div>
-                <button *ngIf="!checkExist" type="submit" class="btn btn-success">Create new</button>
-                <button *ngIf="checkExist" type="submit" class="btn btn-primary">Update</button>
+                <button *ngIf="!checkExist" type="submit" class="btn btn-success btn-block">Tạo Mới User</button>
+                <button *ngIf="checkExist" type="submit" class="btn btn-primary btn-block">Cập Nhật</button>
+
             </form>
+            <a  type="submit" routerLink="/users/users-list" class="btn btn-block btn-warning">Quay Lại</a>
             <h2>{{errors$}}</h2>
         </div>
     </div>

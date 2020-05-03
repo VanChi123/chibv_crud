@@ -7,6 +7,7 @@ import {takeUntil} from "rxjs/operators";
 import {ActivatedRoute, Router} from "@angular/router";
 import {createUser, createUserFailed, loadUser, loadUsersuccess, selectUser, updateUser, UserState} from "../../store";
 import {selectProductErrors} from "../../../products/store";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'fis-user-detail',
@@ -45,7 +46,7 @@ export class UserDetailComponent implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private userStore: Store<UserState>
+      private userStore: Store<UserState>,
   ) {}
   ngOnInit(): void {
     const id: any = this.route.snapshot.paramMap.get('userId');

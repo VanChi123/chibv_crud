@@ -13,7 +13,6 @@ export class UserService {
   constructor(private  http: HttpClient) {
 
   }
-
   getUsersList(): Observable<User[]> {
     return this.http
       .get<User[]>(`/api/users`)
@@ -32,11 +31,21 @@ export class UserService {
       .pipe(catchError((error: any) => throwError(error.json())));
   }
 
-
   updateUser(userData: User): Observable<User>  {
     return this.http
       .put<User>(`/api/users/${userData.id}`, userData)
       .pipe(catchError((error: any) => throwError(error.json())));
+  }
+
+  // deleteUser(id: number): Observable<any>  {
+  //   return this.http
+  //       .delete<User>(`/api/users/${id}`)
+  //       .pipe(catchError((error: any) => throwError(error.json())));
+  // }
+  deleteUser( userData: User): Observable<any>  {
+    return this.http
+        .delete<User>(`/api/users/${userData.id}`)
+        .pipe(catchError((error: any) => throwError(error.json())));
   }
 
   searchUser(keyword: any): Observable<User[]> {
